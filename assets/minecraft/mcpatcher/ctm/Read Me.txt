@@ -1,0 +1,74 @@
+*******************************
+    Customisation
+*******************************
+
+If you don't want some of the CTM features but you do want others then you
+have to open "Faithful32pack.zip" and the contained "ctm" folder then delete
+the folders containing the things you don't like.
+
+With the contents of the folder called "default" you need to delete files ending 
+in ".properties" for the features you don't like. For example: deleting the 
+"glass.properties" file will remove the connected glass.
+
+
+\bookcase\
+	Connects like original CTM.
+
+\brewing stand\
+	Random potion colours.
+
+\cake\
+	Random cake toppings.
+
+\default\
+	Glass that connects like original CTM.
+	Sandstone that connects like original CTM.
+	Bookshelves that connect like original CTM.
+
+\crafting table\
+	Random tools on sides.
+	
+\grass\
+	Random variations to break up the repetition.
+
+\ladders\
+	Random angled rung.
+
+\leaves fancy\ and \leaves fast\
+	Random variations to break up the repetition.
+
+\lily pad\
+	Random variations on the theme.
+
+\monster spawner\
+	Random variations on the theme.
+
+\mushrooms\
+	Random variations on the theme.
+
+\ore coal\ (and the other ore folders)
+	Random variations on the theme.
+
+\pumpkin\
+	Proper bottom texture instead of using the default top texture.
+
+\rails\
+	Random angled sleepers.
+
+\sandstone smooth\
+	Connects similar to the other sandstone.
+
+\sugar cane\
+	Unique texture for the top most section.
+
+\vines\
+	Unique texture for the bottom most section.
+
+\wood birch ends\ (and other wood ends)
+	Gives each type of wood a colour appropriate end texture and makes them connect.
+
+*******************************
+    Credits
+*******************************
+
+Created by Vattic, and MegaSergun (Glass).
