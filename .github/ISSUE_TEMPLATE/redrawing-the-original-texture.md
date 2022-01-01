@@ -1,5 +1,5 @@
 ---
-name: Redrawing the original texture
+name: (old) Redrawing the original texture
 about: It is necessary to redraw the original texture to the specified quality while
   preserving the style
 title: Redrawing the original texture
