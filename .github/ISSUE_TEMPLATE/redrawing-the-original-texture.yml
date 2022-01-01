@@ -1,0 +1,40 @@
+name: Redrawing the original texture
+description: "It is necessary to redraw the original texture to the specified quality while preserving the style."
+labels:
+- "Redrawing"
+body:
+- type: markdown
+  attributes:
+    value: 'Examples of this category include: item duping, item voiding, cannot craft item, behavior and description does not match.
+
+    Please note if you merely want a change, e.g. think something is too OP, you should use the Suggest a Change template instead.'
+- type: input
+  id: discord
+  attributes:
+    label: Your Discord Username
+    description: Leave empty if you don't have one, but this will make it harder to contact you if we need additional info.
+    placeholder: "Example: Steve#1234"
+- type: textarea
+  id: expectation
+  attributes:
+    label: Name of the mod
+    description: The name of the mod whose texture you want to redraw
+    placeholder: "Example: GregTech"
+  validations:
+    required: true
+- type: textarea
+  id: actual
+  attributes:
+    label: The name of the original texture file
+    description: You can also attach the name of the texture file in the attachment
+    placeholder: "Example: 300.png"
+  validations:
+    required: true
+- type: dropdown
+  id: thermos
+  attributes:
+    label: Required quality
+    description: Resolution of the final texture is required
+    options:
+    - 32x
+    - 64x
