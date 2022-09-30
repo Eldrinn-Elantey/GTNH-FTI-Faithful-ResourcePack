@@ -3,6 +3,8 @@ Version: X.X.X
 Date: XX.XX.XXXX
   New textures:
     - Cotton and berry textures from natura mod
+  Fixed:
+    - Adding the glow effect Bricked Blast Furnace
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 Date: 11.01.2022
