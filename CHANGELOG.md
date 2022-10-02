@@ -1,13 +1,15 @@
-# Version: X.X.X
+# Changelog
 
-## Date: XX.XX.XXXX
+## Version: X.X.X
 
-### New textures
+### Date: XX.XX.XXXX
+
+#### New textures
 
 - Cotton and berry textures from natura mod
 - Redraw the textures of the new state of large turbines: no rotor ([#125](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/125))
 
-### Fixed
+#### Fixed
 
 - Adding the glow effect Bricked Blast Furnace [#88](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/88)
 - Adding the glow effect Steam Macerator ([#121](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/121))
@@ -15,38 +17,38 @@
 - Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
 - Redraw the textures of a new element of multi-block machines: ME hatch ([#126](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/126))
 
-### Changes
+#### Changes
 
 - Replacing the hatch maintenance texture from 64 to 32 (OVERLAY_MAINTENANCE.png)
 
 ---
 
-# Version: 0.4.2
+## Version: 0.4.2
 
-## Date: 11.01.2022
+### Date: 11.01.2022
 
-### Changes
+#### Changes
 
 - Adjustment of the textures of the "Mold for the extruder"
 - Updating and correcting machine interfaces
 - Deleting unused files
 
-### New textures
+#### New textures
 
 - The glow effect of the dashboard of the machine
 
 ---
 
-# Version: 0.4
+## Version: 0.4
 
-## Date: 05.11.2021
+### Date: 05.11.2021
 
-### Changes
+#### Changes
 
 - Minecraft Faithful 64 -> 32
 - Deleting temporary files
 
-### New textures
+#### New textures
 
 - Add gregtech texture by Ethryan
 - Add irontank texture by Ethryan
@@ -63,35 +65,35 @@
 
 ---
 
-# Version: 0.3
+## Version: 0.3
 
-## Date: 05.11.2021
+### Date: 05.11.2021
 
-### Changes
+#### Changes
 
 - Changing Fonts
 
-### New textures
+#### New textures
 
 - Added textures by GregTech Fanver V2
 
 ---
 
-# Version: 0.2
+## Version: 0.2
 
-## Date: 05.11.2021
+### Date: 05.11.2021
 
-### New textures
+#### New textures
 
 - Merging with Faithful Modded Edition
 
 ---
 
-# Version: 0.1
+## Version: 0.1
 
-## Date: 05.11.2021
+### Date: 05.11.2021
 
-### New textures
+#### New textures
 
 - Take Faithful 1.7 as a basis
 
