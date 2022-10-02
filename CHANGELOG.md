@@ -8,6 +8,8 @@
 
 - Cotton and berry textures from natura mod
 - Redraw the textures of the new state of large turbines: no rotor ([#125](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/125))
+- Adding textures of GT New Horizons coins by [Usernm0](https://github.com/Usernm0/GTNH-Textures-Usernm)
+- Adding textures of thaumic aspects of GregTech by [Jimbno](https://github.com/Jimbno/UU-Tex)
 
 #### Fixed
 
