@@ -5,6 +5,7 @@
 ### New textures
 
 - Cotton and berry textures from natura mod
+- Redraw the textures of the new state of large turbines: no rotor ([#125](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/125))
 
 ### Fixed
 
