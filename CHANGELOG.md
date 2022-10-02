@@ -13,6 +13,10 @@
 - Adding the glow effect Bronze Blast Furnace ([#87](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/87))
 - Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
 
+### Changes
+
+- Replacing the hatch maintenance texture from 64 to 32 (OVERLAY_MAINTENANCE.png)
+
 ---
 
 # Version: 0.4.2
