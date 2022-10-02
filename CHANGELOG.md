@@ -11,6 +11,7 @@
 - Adding the glow effect Bricked Blast Furnace [#88](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/88)
 - Adding the glow effect Steam Macerator ([#121](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/121))
 - Adding the glow effect Bronze Blast Furnace ([#87](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/87))
+- Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
 
 ---
 
