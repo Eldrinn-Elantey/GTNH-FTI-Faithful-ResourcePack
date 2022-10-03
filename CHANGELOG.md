@@ -13,7 +13,7 @@
 
 #### Fixed
 
-- Adding the glow effect Bricked Blast Furnace [#88](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/88)
+- Adding the glow effect Bricked Blast Furnace ([#88](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/88))
 - Adding the glow effect Steam Macerator ([#121](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/121))
 - Adding the glow effect Bronze Blast Furnace ([#87](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/87))
 - Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
@@ -22,6 +22,7 @@
 #### Changes
 
 - Replacing the hatch maintenance texture from 64 to 32 (OVERLAY_MAINTENANCE.png)
+- Update the Wiremill GUI texture ([#127](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/127))
 
 ---
 
