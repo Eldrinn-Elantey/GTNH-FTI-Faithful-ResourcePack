@@ -18,6 +18,7 @@
 - Adding the glow effect Bronze Blast Furnace ([#87](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/87))
 - Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
 - Redraw the textures of a new element of multi-block machines: ME hatch ([#126](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/126))
+- Adding the glow effect Macerator ([#68](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/68))
 
 #### Changes
 
