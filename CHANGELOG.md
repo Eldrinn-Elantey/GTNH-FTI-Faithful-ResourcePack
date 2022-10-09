@@ -23,6 +23,7 @@
 - Adding the glow effect Macerator ([#68](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/68))
 - Fixing the GUI textures of GregTech steam machines
 - Adding the glow effect Electric Oven ([#55](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/55))
+- Fixed glow effect Miner top
 
 #### Changes
 
