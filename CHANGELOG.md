@@ -12,6 +12,7 @@
 - Adding textures of thaumic aspects of GregTech by [Jimbno](https://github.com/Jimbno/UU-Tex)
 - Added textures of GUI machines by Ethryan (dataReader, MixerAdvanced, EMDisplay, ResearchFake)
 - Added textures gt.bwMetaGeneratedItem0 by Ethryan
+- Added textures World Accelerator
 
 #### Fixed
 
