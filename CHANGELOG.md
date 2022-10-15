@@ -14,7 +14,6 @@
 - Added textures gt.bwMetaGeneratedItem0 by Ethryan
 - Added textures World Accelerator
 - Added textures of miscutils by Ethryan
-- Added textures of Steam (RailCraft) by Ethryan
 
 #### Fixed
 
