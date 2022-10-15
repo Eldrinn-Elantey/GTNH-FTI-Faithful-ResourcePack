@@ -27,6 +27,7 @@
 - Fixing the GUI textures of GregTech steam machines
 - Adding the glow effect Electric Oven ([#55](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/55))
 - Fixed glow effect Miner top
+- Fixing the GUI textures of GregTech Chemical Bath
 
 #### Changes
 
