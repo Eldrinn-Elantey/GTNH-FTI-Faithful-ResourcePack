@@ -23,10 +23,11 @@
 - Correction file name (BLOCK CAESIUM and BLOCK HOLMIUM)
 - Redraw the textures of a new element of multi-block machines: ME hatch ([#126](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/126))
 - Adding the glow effect Macerator ([#68](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/68))
-- Fixing the GUI textures of GregTech steam machines
+- Fixed the GUI textures of GregTech steam machines
 - Adding the glow effect Electric Oven ([#55](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/55))
 - Fixed glow effect Miner top
-- Fixing the GUI textures of GregTech Chemical Bath
+- Fixed the GUI textures of GregTech Chemical Bath
+- Fixed the glow of the Electrolyzer
 
 #### Changes
 
