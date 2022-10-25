@@ -14,6 +14,7 @@
 - Added textures gt.bwMetaGeneratedItem0 by Ethryan
 - Added textures World Accelerator
 - Added textures of miscutils by Ethryan
+- Redrawing the Advanced Cutting Machine II interface
 
 #### Fixed
 
