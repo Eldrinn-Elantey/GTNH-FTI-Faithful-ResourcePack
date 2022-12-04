@@ -29,6 +29,7 @@
 - Fixed glow effect Miner top
 - Fixed the GUI textures of GregTech Chemical Bath
 - Fixed the glow of the Electrolyzer
+- Fixed the glow effect Disassembler ([#94](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/94))
 
 #### Changes
 
