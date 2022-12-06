@@ -15,6 +15,7 @@
 - Added textures World Accelerator
 - Added textures of miscutils by Ethryan
 - Redrawing the Advanced Cutting Machine II interface
+- Redrawing textures advanced memory card
 
 #### Fixed
 
