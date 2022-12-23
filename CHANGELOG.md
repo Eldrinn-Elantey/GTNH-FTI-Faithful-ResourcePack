@@ -16,6 +16,8 @@
 - Added textures of miscutils by Ethryan
 - Redrawing the Advanced Cutting Machine II interface
 - Redrawing textures advanced memory card
+- Adding ModularUI support ([#128](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/128))
+  - Added textures for interface backgrounds ([#129](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/129))
 
 #### Fixed
 
