@@ -1,6 +1,6 @@
 # Changelog
 
-## Version: X.X.X
+## Version: 0.5.0
 
 ### Date: XX.XX.XXXX
 
@@ -45,6 +45,16 @@
 - Replacing the hatch maintenance texture from 64 to 32 (OVERLAY_MAINTENANCE.png)
 - Update the Wiremill GUI texture ([#127](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/127))
 - Deleting unused files
+
+---
+
+## Version: 0.4.3
+
+### Date: 01.10.2023
+
+#### Changes
+
+Assembling what was in the repository for testing and further work after a long break
 
 ---
 
