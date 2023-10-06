@@ -20,6 +20,7 @@
   - Added textures for interface backgrounds ([#129](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/129))
   - Added textures for slot icons ([#130](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/130))
   - Added textures for slot ([#135](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/135))
+  - Added textures for tab ([#136](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/136))
 
 #### Fixed
 
