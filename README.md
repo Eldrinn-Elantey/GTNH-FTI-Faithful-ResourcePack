@@ -5,3 +5,4 @@ Universal resourcepack for minecraft 1.7.10 in the style of faithful
 * http://f32.me/
 * https://github.com/Usernm0/GTNH-Textures-Usernm
 * https://github.com/Jimbno/UU-Tex
+* https://github.com/Ethryan/GTNH-Faithful-Textures
