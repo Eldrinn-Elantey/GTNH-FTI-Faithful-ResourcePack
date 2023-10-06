@@ -35,6 +35,7 @@
 - Fixed the glow of the Electrolyzer
 - Fixed the glow effect Disassembler ([#94](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/94))
 - Fixed Autoclave interfaces
+- Fixed Pulverizer texture
 
 #### Changes
 
