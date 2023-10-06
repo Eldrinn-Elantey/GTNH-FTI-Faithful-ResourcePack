@@ -10,17 +10,16 @@
 - Redraw the textures of the new state of large turbines: no rotor ([#125](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/125))
 - Adding textures of GT New Horizons coins by [Usernm0](https://github.com/Usernm0/GTNH-Textures-Usernm)
 - Adding textures of thaumic aspects of GregTech by [Jimbno](https://github.com/Jimbno/UU-Tex)
-- Added textures of GUI machines by Ethryan (dataReader, MixerAdvanced, EMDisplay, ResearchFake)
-- Added textures gt.bwMetaGeneratedItem0 by Ethryan
+- Added textures of GUI machines by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures) (dataReader, MixerAdvanced, EMDisplay, ResearchFake)
+- Added textures gt.bwMetaGeneratedItem0 by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added textures World Accelerator
-- Added textures of miscutils by Ethryan
+- Added textures of miscutils by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Redrawing the Advanced Cutting Machine II interface
 - Redrawing textures advanced memory card
 - Adding ModularUI support ([#128](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/128))
   - Added textures for interface backgrounds ([#129](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/129))
   - Added textures for slot icons ([#130](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/130))
   - Added textures for slot ([#135](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/135))
-  - Added textures for tab ([#136](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/136))
   - Added textures for tab [Half of the textures are made by me, the other half is taken from [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)] ([#136](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/136))
 
 #### Fixed
@@ -86,17 +85,17 @@ Assembling what was in the repository for testing and further work after a long 
 
 #### New textures
 
-- Add gregtech texture by Ethryan
-- Add irontank texture by Ethryan
-- Add railcraft texture by Ethryan
-- Add stevescarts texture by Ethryan
-- Add taintedmagic texture by Ethryan
-- Add thaumicbases texture by Ethryan
-- Add twilightforest texture by Ethryan
-- Add forbidden texture by Ethryan
-- Add enderio texture by Ethryan
-- Add bloodarsenal texture by Ethryan
-- Add GTNH dreamcraft texture by Ethryan
+- Add gregtech texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add irontank texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add railcraft texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add stevescarts texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add taintedmagic texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add thaumicbases texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add twilightforest texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add forbidden texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add enderio texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add bloodarsenal texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add GTNH dreamcraft texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Add Realistic Sky GT New Horizons
 
 ---
