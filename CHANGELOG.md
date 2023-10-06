@@ -37,6 +37,7 @@
 - Fixed the glow effect Disassembler ([#94](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/94))
 - Fixed Autoclave interfaces
 - Fixed Pulverizer texture
+- Fixed background (Changes have been made to the ModularUI system)
 
 #### Changes
 
