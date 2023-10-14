@@ -18,6 +18,7 @@
 - Redrawing textures advanced memory card
 - Added textures of AE2FluidCraft mod by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added textures of WirelessCraftingTerminal mod by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Updates textures AE2 gui by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Adding ModularUI support ([#128](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/128))
   - Added textures for interface backgrounds ([#129](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/129))
   - Added textures for slot icons ([#130](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/130))
