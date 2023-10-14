@@ -42,6 +42,7 @@
 - Fixed Autoclave interfaces
 - Fixed Pulverizer texture
 - Fixed background (Changes have been made to the ModularUI system)
+- Fixed GregTech gui arrow
 
 #### Changes
 
