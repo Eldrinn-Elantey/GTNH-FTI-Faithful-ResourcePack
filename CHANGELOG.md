@@ -25,6 +25,7 @@
   - Added textures for slot ([#135](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/135))
   - Added textures for tab [Half of the textures are made by me, the other half is taken from [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)] ([#136](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/136))
   - Added textures for progressbar ([#134](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/134))
+  - Added textures for Basic ModularUI by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
