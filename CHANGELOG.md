@@ -1,8 +1,20 @@
 # Changelog
 
-## Version: 0.5.0
+## Version: 0.X.X
 
 ### Date: XX.XX.XXXX
+
+#### Changes
+
+#### Fixed
+
+- Fixed progress bar display for bronze alloy smelter
+
+---
+
+## Version: 0.5.0
+
+### Date: 12.11.2023
 
 #### New textures
 
