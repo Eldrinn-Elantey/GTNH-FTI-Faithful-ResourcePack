@@ -8,7 +8,8 @@
 
 #### Fixed
 
-- Fixed progress bar display for bronze alloy smelter
+- Fix progressbar arrow_bronze
+- Fix progressbar arrow_steel
 
 ---
 
