@@ -4,7 +4,9 @@
 
 ### Date: XX.XX.XXXX
 
-#### Changes
+#### New textures
+
+- Add Not Enough Items texture
 
 #### Fixed
 
