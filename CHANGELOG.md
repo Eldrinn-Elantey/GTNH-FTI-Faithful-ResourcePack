@@ -7,6 +7,7 @@
 #### New textures
 
 - Add Not Enough Items texture
+- Added textures for NEI Custom Diagram mod
 
 #### Fixed
 
