@@ -8,6 +8,7 @@
 
 - Resourcepack name changed from "URP" to "GTNH Faithful Resourcepack FTI"
 - Completed icon and interface textures for AE2
+- Fixed glow effect when steam stove is running
 
 #### New textures
 
