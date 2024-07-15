@@ -4,6 +4,10 @@
 
 ### Date: XX.XX.XXXX
 
+#### Changes
+
+- Resourcepack name changed from "URP" to "GTNH Faithful Resourcepack FTI"
+
 #### New textures
 
 - Add Not Enough Items texture
