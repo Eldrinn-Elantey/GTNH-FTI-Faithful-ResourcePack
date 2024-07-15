@@ -18,6 +18,7 @@
 - FML 32x32 icon texture added
 - Added textures of some GregTech buttons
 - Added textures for mod NotEnoughEnergistics by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures for mod NEI Integration by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
