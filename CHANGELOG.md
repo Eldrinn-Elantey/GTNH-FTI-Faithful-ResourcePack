@@ -16,6 +16,7 @@
 - Added textures for NEI Custom Diagram mod
 - The texture of the dried brain from GovnyaginArtemiy
 - FML 32x32 icon texture added
+- Added textures of some GregTech buttons
 
 #### Fixed
 
