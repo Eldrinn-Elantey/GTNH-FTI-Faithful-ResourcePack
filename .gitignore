@@ -1,4 +1,7 @@
 *.ini
 .markdownlint.json
-/Original textures
+/OriginalTextures
 *.zip
+/oldProject
+*.xlsx
+*.csv
