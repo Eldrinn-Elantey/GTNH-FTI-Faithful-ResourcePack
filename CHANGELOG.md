@@ -12,6 +12,7 @@
 - Changing textures of basalt, granite, marble and concrete
 - Changing the textures of the heating coils
 - Changing fusion reactor casing textures
+- Changing wire insulation textures
 
 #### New textures
 
