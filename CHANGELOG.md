@@ -23,6 +23,7 @@
 - Created 32x32 textures for NEI in the tinkers construction part
 - Added textures of some material blocks
 - Added textures RENDERING_ERROR
+- Added textures Pipeline item and fluid
 
 #### Fixed
 
