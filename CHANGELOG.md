@@ -10,6 +10,7 @@
 - Completed icon and interface textures for AE2
 - Fixed glow effect when steam stove is running
 - Changing textures of basalt, granite, marble and concrete
+- Changing the textures of the heating coils
 
 #### New textures
 
