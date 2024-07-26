@@ -1,4 +1,4 @@
-# GTNH-Faithful-Resourcepack-FTI
+# GTNH-FTI-Faithful-Resourcepack
 
 ## Source
 * https://forum.industrial-craft.net/thread/11244-64x-gregtech-faithful-fanver-1-7-10-1-6-4-update-09-02-15/
