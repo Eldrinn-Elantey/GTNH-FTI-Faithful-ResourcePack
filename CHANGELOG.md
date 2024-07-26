@@ -24,6 +24,7 @@
 - Added textures of some material blocks
 - Added textures RENDERING_ERROR
 - Added textures Pipeline item and fluid
+- Added textures Cyclotron Solenoid
 
 #### Fixed
 
