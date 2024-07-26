@@ -28,6 +28,7 @@
 - Added textures RENDERING_ERROR
 - Added textures Pipeline item and fluid
 - Added textures Cyclotron Solenoid
+- Added texture of DATA, DRAIN, CRAFTING cover
 
 #### Fixed
 
