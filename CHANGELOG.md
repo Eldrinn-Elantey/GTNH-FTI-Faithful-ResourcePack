@@ -13,6 +13,7 @@
 - Changing the textures of the heating coils
 - Changing fusion reactor casing textures
 - Changing wire insulation textures
+- Diesel generator textures have been updated
 
 #### New textures
 
