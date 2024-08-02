@@ -30,6 +30,7 @@
 - Added textures Pipeline item and fluid
 - Added textures Cyclotron Solenoid
 - Added texture of DATA, DRAIN, CRAFTING cover
+- Transfer of railcraft mod textures from GTNH-Faithful-Textures
 
 #### Fixed
 
