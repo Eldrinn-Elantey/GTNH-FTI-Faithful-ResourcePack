@@ -14,6 +14,7 @@
 - Changing fusion reactor casing textures
 - Changing wire insulation textures
 - Diesel generator textures have been updated
+- Adjusting the batteries
 
 #### New textures
 
@@ -32,6 +33,7 @@
 - Added texture of DATA, DRAIN, CRAFTING cover
 - Transfer of railcraft mod textures from GTNH-Faithful-Textures
 - New shape textures from GTNH-Faithful-Textures
+- Bringing components to a single view
 
 #### Fixed
 
