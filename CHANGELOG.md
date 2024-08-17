@@ -1,8 +1,8 @@
 # Changelog
 
-## Version: 0.X.X
+## Version: 0.6.0
 
-### Date: XX.XX.XXXX
+### Date: 18.08.2024
 
 #### Changes
 
