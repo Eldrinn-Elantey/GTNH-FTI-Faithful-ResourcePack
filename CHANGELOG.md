@@ -34,6 +34,7 @@
 - Transfer of railcraft mod textures from GTNH-Faithful-Textures
 - New shape textures from GTNH-Faithful-Textures
 - Bringing components to a single view
+- Added textures Overflow Valve (LV-IV)
 
 #### Fixed
 
