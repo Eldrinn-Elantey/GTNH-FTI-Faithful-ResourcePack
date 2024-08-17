@@ -35,6 +35,7 @@
 - New shape textures from GTNH-Faithful-Textures
 - Bringing components to a single view
 - Added textures Overflow Valve (LV-IV)
+- Added textures Volumetric Flask
 
 #### Fixed
 
