@@ -1,5 +1,17 @@
 # Changelog
 
+## Version: 0.6.1
+
+### Date: 18.08.2024
+
+#### Changes
+
+#### New textures
+
+- Added vanilla cats textures of 128x64 resolution
+
+---
+
 ## Version: 0.6.0
 
 ### Date: 18.08.2024
