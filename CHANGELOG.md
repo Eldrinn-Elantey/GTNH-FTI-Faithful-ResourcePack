@@ -15,6 +15,7 @@
 - Changing wire insulation textures
 - Diesel generator textures have been updated
 - Adjusting the batteries
+- Changing textures of Super chest and Super tank
 
 #### New textures
 
