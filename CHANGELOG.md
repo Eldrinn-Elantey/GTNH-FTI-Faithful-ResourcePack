@@ -12,12 +12,13 @@
 
 - Added vanilla cats textures of 128x64 resolution
 - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures).
+- Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
 
 #### Fixed
 
 - Applied Energistics 2 gray dense cable color has been corrected
+- Taken fixed 1k storage cell texture of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 ---
 
