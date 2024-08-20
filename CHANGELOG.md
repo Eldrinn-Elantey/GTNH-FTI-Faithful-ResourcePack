@@ -13,6 +13,10 @@
 - Added vanilla cats textures of 128x64 resolution
 - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
+#### Fixed
+
+- Applied Energistics 2 gray dense cable color has been corrected
+
 ---
 
 ## Version: 0.6.0
