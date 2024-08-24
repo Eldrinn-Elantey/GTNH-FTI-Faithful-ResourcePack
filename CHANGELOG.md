@@ -15,6 +15,7 @@
 - Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
 - Added textures Automagy mod by GTNH-Faithful-Textures
+- Added missing textures of IronTank mod by GTNH-Faithful-Textures
 
 #### Fixed
 
