@@ -15,9 +15,9 @@
 - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
-- Added textures Automagy mod by [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added missing textures of IronTank mod by [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- 
+- Added Automagy mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added missing textures of IronTank mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added AE2FluidCraft mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
