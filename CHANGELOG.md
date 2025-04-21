@@ -25,6 +25,7 @@
 - Added Avaritia mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added backpack mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added BartWorks mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added BuildCraft mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
