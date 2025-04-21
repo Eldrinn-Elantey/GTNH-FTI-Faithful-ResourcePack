@@ -20,6 +20,7 @@
 - Added AE2FluidCraft mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added AkashicTome mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added BloodMagic mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added Applied Energistics 2 mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
