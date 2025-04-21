@@ -15,8 +15,9 @@
 - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
-- Added textures Automagy mod by GTNH-Faithful-Textures
-- Added missing textures of IronTank mod by GTNH-Faithful-Textures
+- Added textures Automagy mod by [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added missing textures of IronTank mod by [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- 
 
 #### Fixed
 
@@ -50,8 +51,8 @@
 - The texture of the dried brain from GovnyaginArtemiy
 - FML 32x32 icon texture added
 - Added textures of some GregTech buttons
-- Added textures for mod NotEnoughEnergistics by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added textures for mod NEI Integration by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures for mod NotEnoughEnergistics from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures for mod NEI Integration from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Created 32x32 textures for NEI in the tinkers construction part
 - Added textures of some material blocks
 - Added textures RENDERING_ERROR
@@ -82,24 +83,24 @@
 - Redraw the textures of the new state of large turbines: no rotor ([#125](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/125))
 - Adding textures of GT New Horizons coins by [Usernm0](https://github.com/Usernm0/GTNH-Textures-Usernm)
 - Adding textures of thaumic aspects of GregTech by [Jimbno](https://github.com/Jimbno/UU-Tex)
-- Added textures of GUI machines by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures) (dataReader, MixerAdvanced, EMDisplay, ResearchFake)
-- Added textures gt.bwMetaGeneratedItem0 by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures of GUI machines from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures) (dataReader, MixerAdvanced, EMDisplay, ResearchFake)
+- Added textures gt.bwMetaGeneratedItem0 from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Added textures World Accelerator
-- Added textures of miscutils by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures of miscutils from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Redrawing the Advanced Cutting Machine II interface
 - Redrawing textures advanced memory card
-- Added textures of AE2FluidCraft mod by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added textures of WirelessCraftingTerminal mod by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Updates textures AE2 gui by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added textures of ModularUI mod by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures of AE2FluidCraft mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures of WirelessCraftingTerminal mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Updates textures AE2 gui from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Added textures of ModularUI mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Adding ModularUI at GregTech support ([#128](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/128))
   - Added textures for interface backgrounds ([#129](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/129))
   - Added textures for slot icons ([#130](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/130))
   - Added textures for slot ([#135](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/135))
   - Added textures for tab [Half of the textures are made by me, the other half is taken from [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)] ([#136](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/136))
   - Added textures for progressbar ([#134](https://github.com/Eldrinn-Elantey/URP-Universal-Minecraft-Resourcepacks/issues/134))
-  - Added textures for Basic ModularUI by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-  - Added textures for overlay slot by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+  - Added textures for Basic ModularUI from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+  - Added textures for overlay slot from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 
 #### Fixed
 
@@ -165,17 +166,17 @@ Assembling what was in the repository for testing and further work after a long 
 
 #### New textures
 
-- Add gregtech texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add irontank texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add railcraft texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add stevescarts texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add taintedmagic texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add thaumicbases texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add twilightforest texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add forbidden texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add enderio texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add bloodarsenal texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Add GTNH dreamcraft texture by [Ethryan](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add gregtech texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add irontank texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add railcraft texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add stevescarts texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add taintedmagic texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add thaumicbases texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add twilightforest texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add forbidden texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add enderio texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add bloodarsenal texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Add GTNH dreamcraft texture from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Add Realistic Sky GT New Horizons
 
 ---
