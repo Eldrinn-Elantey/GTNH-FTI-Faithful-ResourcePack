@@ -32,6 +32,7 @@
   - Added Baubles mod textures
   - Added Better Builders Wands mod textures
   - Added Better Questing mod textures
+  - Added Crops++ mod textures
 
 #### Fixed
 
