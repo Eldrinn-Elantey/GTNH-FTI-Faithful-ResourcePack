@@ -28,6 +28,7 @@
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
+  - Added Battlegear2 mod GUI textures
 
 #### Fixed
 
