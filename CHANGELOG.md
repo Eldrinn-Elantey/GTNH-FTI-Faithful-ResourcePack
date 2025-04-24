@@ -9,6 +9,7 @@
 - Changed textures of some fluid cells from the Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
 - Remove previously added fonts
 - Remove unused textures
+- Removed GregTech arrow textures
 
 #### New textures
 
