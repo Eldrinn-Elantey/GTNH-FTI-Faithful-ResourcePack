@@ -13,25 +13,26 @@
 
 #### New textures
 
-- Added vanilla cats textures of 128x64 resolution
-- Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added textures of some items of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
-- Added Automagy mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added missing textures of IronTank mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added AE2FluidCraft mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added AkashicTome mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added BloodMagic mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added Applied Energistics 2 mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added Avaritia mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added backpack mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added BartWorks mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
-- Added BuildCraft mod textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Import vanilla cats textures of 128x64 resolution
+- Import missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
+- Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
+  - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod
+  - Added textures of some items of Applied Energistics 2 mod
+  - Added Automagy mod textures
+  - Added missing textures of IronTank mod
+  - Added AE2FluidCraft mod textures
+  - Added AkashicTome mod textures
+  - Added BloodMagic mod textures
+  - Added Applied Energistics 2 mod textures
+  - Added Avaritia mod textures
+  - Added backpack mod textures
+  - Added BartWorks mod textures
+  - Added BuildCraft mod textures
 
 #### Fixed
 
 - Applied Energistics 2 gray dense cable color has been corrected
-- Taken fixed 1k storage cell texture of Applied Energistics 2 mod from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- Taken fixed 1k storage cell texture of Applied Energistics 2 mod
 
 ---
 
