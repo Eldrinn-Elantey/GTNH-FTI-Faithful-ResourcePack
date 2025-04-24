@@ -30,6 +30,7 @@
   - Added BuildCraft mod textures
   - Added Battlegear2 mod GUI textures
   - Added Baubles mod textures
+  - Added Better Builders Wands mod textures
 
 #### Fixed
 
