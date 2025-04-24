@@ -31,6 +31,7 @@
   - Added Battlegear2 mod GUI textures
   - Added Baubles mod textures
   - Added Better Builders Wands mod textures
+  - Added Better Questing mod textures
 
 #### Fixed
 
