@@ -19,6 +19,7 @@
   - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod
   - Added textures of some items of Applied Energistics 2 mod
   - Added Automagy mod textures
+  - Augmented Applied Energistics 2 mod
   - Added missing textures of IronTank mod
   - Added AE2FluidCraft mod textures
   - Added AkashicTome mod textures
