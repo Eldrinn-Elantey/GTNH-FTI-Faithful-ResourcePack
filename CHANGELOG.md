@@ -27,6 +27,7 @@
   - Added Akashic Tome mod textures
   - Added Amunra mod textures
   - Added Architecture Craft mod textures
+  - Added Avaritia mod texture
   - Added missing textures of IronTank mod
   - Added AE2FluidCraft mod textures
   - Added AkashicTome mod textures
