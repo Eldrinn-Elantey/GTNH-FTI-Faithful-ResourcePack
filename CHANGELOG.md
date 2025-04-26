@@ -20,6 +20,7 @@
   - Added textures of some items of Applied Energistics 2 mod
   - Added Automagy mod textures
   - Augmented Applied Energistics 2 mod
+  - Added Advanced Solar Panel mod textures
   - Added missing textures of IronTank mod
   - Added AE2FluidCraft mod textures
   - Added AkashicTome mod textures
