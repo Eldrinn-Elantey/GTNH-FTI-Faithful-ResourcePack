@@ -25,6 +25,7 @@
   - Added AE2 Fluid Crafting mod textures
   - Added AE2FluidCraft-Rework mod textures
   - Added Akashic Tome mod textures
+  - Added Amunra mod textures
   - Added missing textures of IronTank mod
   - Added AE2FluidCraft mod textures
   - Added AkashicTome mod textures
