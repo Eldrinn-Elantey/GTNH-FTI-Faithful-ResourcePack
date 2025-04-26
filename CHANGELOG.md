@@ -43,6 +43,7 @@
   - Added Better Questing mod textures
   - Added Crops++ mod textures
   - Added Catwalks mod textures
+  - Added Cooking for Blockheads mod textures
 
 #### Fixed
 
