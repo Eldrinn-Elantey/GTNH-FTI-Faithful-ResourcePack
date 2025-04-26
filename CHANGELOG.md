@@ -44,6 +44,7 @@
   - Added Crops++ mod textures
   - Added Catwalks mod textures
   - Added Cooking for Blockheads mod textures
+  - Added DreamCraft mod textures
 
 #### Fixed
 
