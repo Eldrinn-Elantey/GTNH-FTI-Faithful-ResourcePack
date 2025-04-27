@@ -46,6 +46,7 @@
   - Added Cooking for Blockheads mod textures
   - Added DreamCraft mod textures
   - Added ggfab mod textures
+  - Added Witchery mod textures
 
 #### Fixed
 
