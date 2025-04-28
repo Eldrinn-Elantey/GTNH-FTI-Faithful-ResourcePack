@@ -47,6 +47,7 @@
   - Added DreamCraft mod textures
   - Added ggfab mod textures
   - Added Visual Prospecting mod textures
+  - Added Twilight Forest mod some textures
   - Added Witchery mod textures
 
 #### Fixed
