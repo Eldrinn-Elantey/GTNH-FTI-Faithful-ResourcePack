@@ -1,0 +1,88 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number that follows SemVer (x.y.z), do not include the "v" prefix (e.g., 1.0.0)'
+        required: true
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  release:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check branch name follows SemVer
+        if: github.event_name == 'pull_request'
+        run: |
+          if [[ ! "${{ github.event.pull_request.head.ref }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Branch name does not follow SemVer format (x.y.z)."
+            exit 1
+          fi
+
+      - name: Check input version follows SemVer
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [[ ! "${{ github.event.inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version does not follow SemVer format (x.y.z)."
+            exit 1
+          fi
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23.7.0'
+
+      - name: Install Dependencies
+        run: | 
+          cd ./.scripts
+          npm install
+
+      - name: Run scripts
+        run: |
+          cd ./.scripts
+          npm run cleanup
+          npm run update ${{ github.event.inputs.version || github.event.pull_request.head.ref }}
+          npm run zip
+
+      - name: Create tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/v${{ github.event.inputs.version || github.event.pull_request.head.ref }}',
+              sha: context.sha
+            });
+
+      - name: Create GitHub Release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const release = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: `v${{ github.event.inputs.version || github.event.pull_request.head.ref }}`,
+              name: `v${{ github.event.inputs.version || github.event.pull_request.head.ref }}`,
+              body: '',
+              target_commitish: context.sha
+            });
+
+            github.rest.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              name: 'GTNH-Faithful-x32 v${{ github.event.inputs.version || github.event.pull_request.head.ref }}.zip',
+              data: require('fs').readFileSync('./pack.zip')
+            });
