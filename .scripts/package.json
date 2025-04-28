@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "scripts": {
+    "extract": "node runs/extract.ts",
+    "cleanup": "node runs/clean.ts",
+    "update": "node runs/update.ts",
+    "progress": "node runs/progress.ts",
+    "recolor": "node runs/recolor.ts",
+    "zip": "node runs/zip.ts",
+    "switch-color": "node runs/switch-color.ts"
+  },
+  "engines": {
+    "node": ">=23.7.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^22.14.0",
+    "@types/unzipper": "^0.10.11",
+    "archiver": "^7.0.1",
+    "consola": "^3.4.2",
+    "sharp": "^0.34.0",
+    "typescript": "^5.8.3",
+    "unzipper": "^0.12.3"
+  }
+}
