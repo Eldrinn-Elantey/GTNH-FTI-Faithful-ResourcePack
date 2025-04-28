@@ -49,6 +49,7 @@
   - Added Visual Prospecting mod textures
   - Added Twilight Forest mod some textures
   - Added Witchery mod textures
+  - Added Ztones mod some textures
 
 #### Fixed
 
