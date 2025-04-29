@@ -33,6 +33,7 @@
   - Added Applied Energistics 2 mod textures
   - Added Avaritia mod textures
   - Added Alchemical Wizardry mod textures
+  - Added Draconic Evolution mod textures
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
