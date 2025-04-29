@@ -34,6 +34,7 @@
   - Added BloodMagic mod textures
   - Added Applied Energistics 2 mod textures
   - Added Avaritia mod textures
+  - Added Alchemical Wizardry mod textures
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
