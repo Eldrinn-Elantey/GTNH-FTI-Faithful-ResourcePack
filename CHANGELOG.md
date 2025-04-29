@@ -16,14 +16,12 @@
 - Import vanilla cats textures of 128x64 resolution
 - Import missing vanilla entity textures from [Faithful32-1.7.10](https://github.com/F32Organization/Faithful32-1.7.10)
 - Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
-  - Added some fluid cell textures from Applied Energistics 2 Fluid Crafting mod
-  - Added textures of some items of Applied Energistics 2 mod
   - Added Automagy mod textures
   - Augmented Applied Energistics 2 mod
   - Added Advanced Solar Panel mod textures
   - Added Adventure Backpack mod textures
-  - Added AE2 Fluid Crafting mod textures
-  - Added AE2FluidCraft-Rework mod textures
+  - Augmented AE2 Fluid Crafting mod textures
+  - Augmented AE2FluidCraft-Rework mod textures
   - Added Akashic Tome mod textures
   - Added Amunra mod textures
   - Added Architecture Craft mod textures
