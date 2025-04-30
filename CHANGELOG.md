@@ -39,6 +39,7 @@
   - Added some textures Extra Bees mod
   - Added some textures Extra Trees mod
   - Added some textures Forestry mod
+  - Added Galacticraft mod textures
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
