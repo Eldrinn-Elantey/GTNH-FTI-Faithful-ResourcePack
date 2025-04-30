@@ -41,6 +41,7 @@
   - Added some textures Forestry mod
   - Added Galacticraft mod textures
   - Added Gendustry mod textures
+  - Added some textures Genetics mod
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
