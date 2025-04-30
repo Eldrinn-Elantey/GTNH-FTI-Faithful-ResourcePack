@@ -35,6 +35,7 @@
   - Added Alchemical Wizardry mod textures
   - Added Draconic Evolution mod textures
   - Added EnderIO mod textures
+  - Added some textures Extrautils mod
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
