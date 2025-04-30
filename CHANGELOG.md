@@ -36,6 +36,7 @@
   - Added Draconic Evolution mod textures
   - Added EnderIO mod textures
   - Added some textures Extrautils mod
+  - Added some textures Extra Bees mod
   - Added backpack mod textures
   - Added BartWorks mod textures
   - Added BuildCraft mod textures
