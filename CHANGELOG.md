@@ -39,6 +39,7 @@
   - Added some textures Extra Bees mod
   - Added some textures Extra Trees mod
   - Added some textures Forestry mod
+  - Added some textures Good Generator mod
   - Added Galacticraft mod textures
   - Added Gendustry mod textures
   - Added some textures Genetics mod
