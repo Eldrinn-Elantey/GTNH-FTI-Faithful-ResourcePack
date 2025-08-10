@@ -61,6 +61,7 @@
   - Added GT NEI Ore Plugin mod textures
   - Added Visual Prospecting mod textures
   - Added Twilight Forest mod some textures
+  - Added Thaumic Tinkerer mod textures
   - Added Witchery mod textures
   - Added Ztones mod some textures
 
