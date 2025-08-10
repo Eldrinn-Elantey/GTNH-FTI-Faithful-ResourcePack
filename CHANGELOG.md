@@ -1,8 +1,8 @@
 # Changelog
 
-## Version: 0.6.1
+## Version: 0.7.0
 
-### Date: 18.08.2024
+### Date: 10.08.2025
 
 #### Changes
 
