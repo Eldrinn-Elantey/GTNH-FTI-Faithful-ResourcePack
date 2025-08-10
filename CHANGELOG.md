@@ -43,6 +43,7 @@
   - Added some textures Hard Core Ender Expansion mod
   - Added some Industrial Craft 2 mod
   - Added Galacticraft mod textures
+  - Added Jabba mod textures
   - Added Gendustry mod textures
   - Added some textures Genetics mod
   - Added backpack mod textures
