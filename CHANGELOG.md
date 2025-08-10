@@ -40,6 +40,8 @@
   - Added some textures Extra Trees mod
   - Added some textures Forestry mod
   - Added some textures Good Generator mod
+  - Added some textures Hard Core Ender Expansion mod
+  - Added some Industrial Craft 2 mod
   - Added Galacticraft mod textures
   - Added Gendustry mod textures
   - Added some textures Genetics mod
