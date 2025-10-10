@@ -8,6 +8,7 @@
 
 - Remove mcpatcher files
 - Rename MACHINE_UHV
+- Update GUIAdvancedInfoPanel
 
 #### New textures
 
