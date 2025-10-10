@@ -1,5 +1,18 @@
 # Changelog
 
+## Version: 0.8.0
+
+### Date: XX.XX.20XX
+
+#### Changes
+
+- Remove mcpatcher files
+
+#### New textures
+
+- Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
+  - Update Minecraft/EtFuturum textures
+
 ## Version: 0.7.0
 
 ### Date: 10.08.2025
