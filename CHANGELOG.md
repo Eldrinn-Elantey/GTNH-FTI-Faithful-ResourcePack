@@ -14,6 +14,7 @@
 
 - Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
   - Update Minecraft/EtFuturum textures
+  - Added muffler button
 
 ## Version: 0.7.0
 
