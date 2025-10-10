@@ -7,6 +7,7 @@
 #### Changes
 
 - Remove mcpatcher files
+- Rename MACHINE_UHV
 
 #### New textures
 
