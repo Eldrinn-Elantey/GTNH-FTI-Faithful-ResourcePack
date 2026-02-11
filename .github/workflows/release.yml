@@ -1,12 +1,18 @@
-name: Release
+name: Release ResourcePack
 
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*'          # релиз через тег
+  pull_request:
+    types:
+      - closed        # релиз через merge PR
+    branches:
+      - master
 
 jobs:
-  build:
+  release:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
 
     permissions:
@@ -16,34 +22,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # =========================
-      # Create resourcepack zip
-      # =========================
+      # ------------------------
+      # Определяем версию
+      # ------------------------
+      - name: Determine version
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "push" ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"   # push tag v1.0.0 → 1.0.0
+          else
+            VERSION="${GITHUB_HEAD_REF#v}"   # PR branch v1.0.0 → 1.0.0
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Using version $VERSION"
+
+      # ------------------------
+      # Создаём zip
+      # ------------------------
       - name: Create zip archive
         run: |
-          ZIP_NAME="GTNH-FTI-Faithful-${GITHUB_REF_NAME}.zip"
+          ZIP_NAME="GTNH-FTI-Faithful-${VERSION}.zip"
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
           zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
 
-      # =========================
-      # Extract changelog section
-      # =========================
-      - name: Extract changelog for this version
+      # ------------------------
+      # Извлекаем changelog
+      # ------------------------
+      - name: Extract changelog
         run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          echo "Extracting changelog for version $VERSION"
-
           awk "/## Version: $VERSION/{flag=1;next}/## Version: /{flag=0}flag" CHANGELOG.md > RELEASE.md
-
-          echo "Generated RELEASE.md:"
           cat RELEASE.md
 
-      # =========================
-      # Create GitHub Release
-      # =========================
+      # ------------------------
+      # Создаём GitHub Release
+      # ------------------------
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: "v${{ env.VERSION }}"
           body_path: RELEASE.md
           files: ${{ env.ZIP_NAME }}
