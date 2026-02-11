@@ -1,5 +1,69 @@
 # Changelog
 
+## Version: 1.0.0
+
+### Date: XX.XX.20XX
+
+#### Changes
+
+- Remove mcpatcher files
+- Rename MACHINE_UHV
+- Update GUIAdvancedInfoPanel
+- Update enhancedlootbags nei
+
+#### New textures
+
+- Create time_clock.png
+- Create OVERLAY_FLUID_STORAGE_MONITOR
+
+- Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
+  - Update Minecraft/EtFuturum textures
+  - Added muffler button
+  - adventurebackpack
+  - ae2fc
+  - amunra
+  - appliedenergistics2
+  - avaritiaddons
+  - backhand
+  - baubles
+  - binniecore
+  - bloodarsenal
+  - bogosorter
+  - botania
+  - chisel
+  - craftingtweaks
+  - dreamcraft
+  - emt
+  - extratrees
+  - forestry
+  - gendustry
+  - genetics
+  - ggfab
+  - goodgenerator
+  - gravisuiteneo
+  - gregtech
+  - gtnhlanth
+  - hardcoreenderexpansion
+  - harvestcraft
+  - harvestthenether
+  - ic2
+  - malisisdoors
+  - miscutils
+  - mobsinfo
+  - modularui2
+  - neiaddons
+  - serverutilities
+  - storagedrawers
+  - taintedmagic
+  - thaumcraft
+  - thaumicbases
+  - thaumicenergistics
+  - tinker
+  - tinkersdefense
+  - twilightforest
+  - witchery
+  - witchinggadgets
+
 ## Version: 0.7.0
 
 ### Date: 10.08.2025

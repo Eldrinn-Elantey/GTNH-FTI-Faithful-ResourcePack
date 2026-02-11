@@ -1,4 +1,2 @@
 .default
-OriginalTextures
-oldProject
-*.zip
+*.py
