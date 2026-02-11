@@ -8,7 +8,7 @@ on:
     types:
       - closed        # релиз через merge PR
     branches:
-      - master
+      - main
 
 jobs:
   release:
