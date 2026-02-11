@@ -12,6 +12,7 @@
 
 #### New textures
 
+- Create time_clock.png
 - Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
   - Update Minecraft/EtFuturum textures
   - Added muffler button
