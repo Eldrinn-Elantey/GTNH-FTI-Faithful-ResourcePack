@@ -13,6 +13,8 @@
 #### New textures
 
 - Create time_clock.png
+- Create OVERLAY_FLUID_STORAGE_MONITOR
+
 - Import textures from [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures):
   - Update Minecraft/EtFuturum textures
   - Added muffler button
