@@ -9,6 +9,7 @@
 - Remove mcpatcher files
 - Rename MACHINE_UHV
 - Update GUIAdvancedInfoPanel
+- Update enhancedlootbags nei
 
 #### New textures
 
