@@ -36,6 +36,15 @@ jobs:
           echo "Using version $VERSION"
 
       # ------------------------
+      # Читаем pack_game_version из pack.mcmeta
+      # ------------------------
+      - name: Extract pack_game_version
+        run: |
+          PACK_GAME_VERSION=$(jq -r '.gtnh_resource_pack_updater.pack_game_version' pack.mcmeta)
+          echo "PACK_GAME_VERSION=$PACK_GAME_VERSION" >> $GITHUB_ENV
+          echo "Detected pack_game_version: $PACK_GAME_VERSION"
+
+      # ------------------------
       # Создаём zip
       # ------------------------
       - name: Create zip archive
@@ -44,6 +53,21 @@ jobs:
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
           zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
+
+      # ------------------------
+      # Генерируем gtnh-pack-update.json (для релиза)
+      # ------------------------
+      - name: Generate release JSON
+        run: |
+          cat <<EOF > gtnh-pack-update.json
+          {
+            "schema": 1,
+            "pack_game_version": "${PACK_GAME_VERSION}",
+            "pack_version": "${VERSION}"
+          }
+          EOF
+
+          cat gtnh-pack-update.json
 
       # ------------------------
       # Извлекаем changelog
