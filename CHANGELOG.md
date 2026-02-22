@@ -1,8 +1,20 @@
 # Changelog
 
+## Version: 1.1.0
+
+### Date: 22.02.2026
+
+#### Changes
+
+- Add support resource update notifier
+
+#### Fixed
+
+- Fix neibg
+
 ## Version: 1.0.0
 
-### Date: XX.XX.20XX
+### Date: 12.02.2026
 
 #### Changes
 
