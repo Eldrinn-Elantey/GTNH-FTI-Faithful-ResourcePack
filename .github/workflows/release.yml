@@ -47,11 +47,6 @@ jobs:
             VERSION="${PR_TITLE#v}"
           fi
 
-<<<<<<< Updated upstream
-      # ------------------------
-      # Создаём zip
-      # ------------------------
-=======
           if [[ ! "$VERSION" =~ $semver_regex ]]; then
             echo "Version '$VERSION' is not valid SemVer (x.y.z)."
             exit 1
@@ -96,7 +91,6 @@ jobs:
           mv pack.mcmeta.tmp pack.mcmeta
           cat pack.mcmeta
 
->>>>>>> Stashed changes
       - name: Create zip archive
         shell: bash
         run: |
@@ -107,11 +101,6 @@ jobs:
 
           zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
 
-<<<<<<< Updated upstream
-      # ------------------------
-      # Извлекаем changelog
-      # ------------------------
-=======
       - name: Generate release JSON
         shell: bash
         run: |
@@ -127,7 +116,6 @@ jobs:
 
           cat gtnh-pack-update.json
 
->>>>>>> Stashed changes
       - name: Extract changelog
         shell: bash
         run: |
