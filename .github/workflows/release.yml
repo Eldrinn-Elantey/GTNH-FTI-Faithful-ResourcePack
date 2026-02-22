@@ -1,18 +1,23 @@
 name: Release ResourcePack
 
 on:
-  push:
-    tags:
-      - 'v*'          # релиз через тег
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number in SemVer format (x.y.z), without v prefix'
+        required: false
+      pack_game_version:
+        description: 'Optional GTNH version list (SemVer values separated by ;)'
+        required: false
   pull_request:
     types:
-      - closed        # релиз через merge PR
+      - closed
     branches:
       - main
 
 jobs:
   release:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
 
     permissions:
@@ -22,43 +27,85 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ------------------------
-      # Определяем версию
-      # ------------------------
-      - name: Determine version
+      - name: Determine release metadata
+        shell: bash
         run: |
-          if [[ "${GITHUB_EVENT_NAME}" == "push" ]]; then
-            VERSION="${GITHUB_REF_NAME#v}"   # push tag v1.0.0 → 1.0.0
+          set -euo pipefail
+
+          semver_regex='^[0-9]+\.[0-9]+\.[0-9]+$'
+          semver_title_regex='^v?[0-9]+\.[0-9]+\.[0-9]+$'
+          semver_list_regex='^[0-9]+\.[0-9]+\.[0-9]+([[:space:]]*;[[:space:]]*[0-9]+\.[0-9]+\.[0-9]+)*$'
+
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.version }}" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
           else
-            VERSION="${GITHUB_HEAD_REF#v}"   # PR branch v1.0.0 → 1.0.0
+            PR_TITLE="$(echo "${{ github.event.pull_request.title }}" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+            if [[ ! "$PR_TITLE" =~ $semver_title_regex ]]; then
+              echo "PR title '$PR_TITLE' must be version in format x.y.z or vx.y.z."
+              exit 1
+            fi
+            VERSION="${PR_TITLE#v}"
           fi
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "Using version $VERSION"
 
-      # ------------------------
-      # Читаем pack_game_version из pack.mcmeta
-      # ------------------------
-      - name: Extract pack_game_version
+          if [[ ! "$VERSION" =~ $semver_regex ]]; then
+            echo "Version '$VERSION' is not valid SemVer (x.y.z)."
+            exit 1
+          fi
+
+          PACK_GAME_VERSION="$(jq -r '.gtnh_resource_pack_updater.pack_game_version' pack.mcmeta)"
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.pack_game_version }}" ]]; then
+            PACK_GAME_VERSION="${{ github.event.inputs.pack_game_version }}"
+          fi
+
+          PACK_GAME_VERSION="$(echo "$PACK_GAME_VERSION" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+
+          if [[ ! "$PACK_GAME_VERSION" =~ $semver_list_regex ]]; then
+            echo "pack_game_version '$PACK_GAME_VERSION' must be SemVer list separated by ';' (example: 2.8.0;2.8.1)."
+            exit 1
+          fi
+
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "PACK_GAME_VERSION=$PACK_GAME_VERSION" >> "$GITHUB_ENV"
+
+          echo "Using version: $VERSION"
+          echo "Using pack_game_version: $PACK_GAME_VERSION"
+
+      - name: Sync pack.mcmeta with release version
+        shell: bash
         run: |
-          PACK_GAME_VERSION=$(jq -r '.gtnh_resource_pack_updater.pack_game_version' pack.mcmeta)
-          echo "PACK_GAME_VERSION=$PACK_GAME_VERSION" >> $GITHUB_ENV
-          echo "Detected pack_game_version: $PACK_GAME_VERSION"
+          set -euo pipefail
 
-      # ------------------------
-      # Создаём zip
-      # ------------------------
+          jq \
+            --arg version "${VERSION}" \
+            --arg packGameVersion "${PACK_GAME_VERSION}" \
+            '
+            .gtnh_resource_pack_updater.pack_version = $version
+            | .gtnh_resource_pack_updater.pack_game_version = $packGameVersion
+            | .pack.description |= if test("§bv[0-9]+\\.[0-9]+\\.[0-9]+")
+                then sub("§bv[0-9]+\\.[0-9]+\\.[0-9]+"; "§bv" + $version)
+                else .
+              end
+            ' \
+            pack.mcmeta > pack.mcmeta.tmp
+
+          mv pack.mcmeta.tmp pack.mcmeta
+          cat pack.mcmeta
+
       - name: Create zip archive
+        shell: bash
         run: |
+          set -euo pipefail
+
           ZIP_NAME="GTNH-FTI-Faithful-${VERSION}.zip"
-          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+          echo "ZIP_NAME=$ZIP_NAME" >> "$GITHUB_ENV"
 
           zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
 
-      # ------------------------
-      # Генерируем gtnh-pack-update.json (для релиза)
-      # ------------------------
       - name: Generate release JSON
+        shell: bash
         run: |
+          set -euo pipefail
+
           cat <<EOF > gtnh-pack-update.json
           {
             "schema": 1,
@@ -69,20 +116,23 @@ jobs:
 
           cat gtnh-pack-update.json
 
-      # ------------------------
-      # Извлекаем changelog
-      # ------------------------
       - name: Extract changelog
+        shell: bash
         run: |
-          awk "/## Version: $VERSION/{flag=1;next}/## Version: /{flag=0}flag" CHANGELOG.md > RELEASE.md
+          set -euo pipefail
+
+          awk "/## Version: ${VERSION}/{flag=1;next}/## Version: /{flag=0}flag" CHANGELOG.md > RELEASE.md
+          if [[ ! -s RELEASE.md ]]; then
+            echo "Release v${VERSION}" > RELEASE.md
+          fi
           cat RELEASE.md
 
-      # ------------------------
-      # Создаём GitHub Release
-      # ------------------------
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ env.VERSION }}"
+          target_commitish: "${{ github.event.pull_request.merge_commit_sha || github.sha }}"
           body_path: RELEASE.md
-          files: ${{ env.ZIP_NAME }}
+          files: |
+            ${{ env.ZIP_NAME }}
+            gtnh-pack-update.json
