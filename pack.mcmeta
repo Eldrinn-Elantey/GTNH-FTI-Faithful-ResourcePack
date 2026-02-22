@@ -2,8 +2,6 @@
   "pack": {
     "pack_format": 1,
     "description": "§6GTNH §bFaithful x32 §6By FTI §bv0.7.0 §r(52% done)"
-<<<<<<< Updated upstream
-=======
   },
   "gtnh_resource_pack_updater": {
     "schema": 1,
@@ -15,6 +13,5 @@
       "owner": "Eldrinn-Elantey",
       "repo": "GTNH-FTI-Faithful-ResourcePack"
     }
->>>>>>> Stashed changes
   }
 }
