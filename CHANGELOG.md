@@ -1,8 +1,16 @@
 # Changelog
 
-## Version: 1.0.0
+## Version: 1.1.0
 
 ### Date: XX.XX.20XX
+
+#### Fixed
+
+- Fix neibg
+
+## Version: 1.0.0
+
+### Date: 12.02.2026
 
 #### Changes
 
