@@ -1,5 +1,16 @@
 # Changelog
 
+## Version: 1.1.1
+
+### Date: 10.03.2026
+
+#### Changes
+
+- remove unused files
+- sync GT materialicons and iconsets with [GTNH-Faithful-Textures](https://github.com/Ethryan/GTNH-Faithful-Textures)
+- add missing textures
+- fix some textures
+
 ## Version: 1.1.0
 
 ### Date: 22.02.2026
