@@ -1,5 +1,16 @@
 # Changelog
 
+## Version: 1.2.1
+
+### Changes
+
+- Optimize images
+- Added a texture for the Fake Crafting Card
+
+### Fixed
+
+- The texture of the disposable screwdriver has been fixed
+
 ## Version: 1.1.1
 
 ### Date: 10.03.2026
