@@ -1,0 +1,10 @@
+# Все файлы по умолчанию — текст с LF
+* text=auto eol=lf
+
+# PNG — бинарные, никогда не трогать
+*.png binary
+
+# JSON/mcmeta — текст
+*.json text eol=lf
+*.mcmeta text eol=lf
+*.md text eol=lf
