@@ -93,6 +93,25 @@ jobs:
           mv pack.mcmeta.tmp pack.mcmeta
           cat pack.mcmeta
 
+      - name: Commit pack.mcmeta version bump
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="${{ github.event.pull_request.base.ref || github.ref_name }}"
+
+          if git diff --quiet -- pack.mcmeta; then
+            echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          else
+            git add pack.mcmeta
+            git commit -m "Bump pack.mcmeta to v${VERSION}"
+            git push origin "HEAD:${BRANCH}"
+            echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          fi
+
       - name: Create zip archive
         shell: bash
         run: |
@@ -136,7 +155,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ env.VERSION }}"
-          target_commitish: "${{ github.event.pull_request.merge_commit_sha || github.sha }}"
+          target_commitish: "${{ env.COMMIT_SHA }}"
           body_path: RELEASE.md
           files: |
             ${{ env.ZIP_NAME }}
