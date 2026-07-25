@@ -36,7 +36,7 @@ jobs:
 
           semver_regex='^[0-9]+\.[0-9]+\.[0-9]+$'
           semver_title_regex='^v?[0-9]+\.[0-9]+\.[0-9]+$'
-          semver_list_regex='^[0-9]+\.[0-9]+\.[0-9]+([[:space:]]*;[[:space:]]*[0-9]+\.[0-9]+\.[0-9]+)*$'
+          semver_list_regex='^[0-9]+\.[0-9]+\.([0-9]+|X)([[:space:]]*;[[:space:]]*[0-9]+\.[0-9]+\.([0-9]+|X))*$'
 
           if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.version }}" ]]; then
             VERSION="${{ github.event.inputs.version }}"
@@ -154,7 +154,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v${{ env.VERSION }}"
+          tag_name: "${{ env.VERSION }}"
           target_commitish: "${{ env.COMMIT_SHA }}"
           body_path: RELEASE.md
           files: |
