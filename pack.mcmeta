@@ -7,7 +7,7 @@
     "schema": 1,
     "pack_name": "GTNH FTI Faithful Resourcepack",
     "pack_version": "1.0.0",
-    "pack_game_version": "2.9.X",
+    "pack_game_version": "2.9.0",
     "source": {
       "type": "github_releases",
       "owner": "Eldrinn-Elantey",
