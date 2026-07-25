@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, Group, Modal, MultiSelect, Pagination, Stack, Text, TextInput, useComputedColorScheme, useMantineColorScheme } from '@mantine/core';
+import { Card, Group, Modal, MultiSelect, Pagination, Stack, Tabs, Text, TextInput, useMantineColorScheme } from '@mantine/core';
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useDisclosure, useLocalStorage, useViewportSize } from '@mantine/hooks';
 import { MenuHolder } from './menu';
@@ -32,13 +32,18 @@ export default function Home() {
   const [opened, { open, close }] = useDisclosure(false);
   const [modalData, setModalData] = useState<ModalData | null>(null);
   const [cache, setCache] = useState<Cache | null>();
+  const [extraFiles, setExtraFiles] = useState<string[]>([]);
 
   useEffect(() => {
     setColorScheme('dark');
     fetch('/api/cache')
       .then((res) => res.json())
-      .then(setCache)
+      .then(setCache);
+    fetch('/api/extra-files')
+      .then((res) => res.json())
+      .then((data) => setExtraFiles(data.paths ?? []));
   }, []);
+
 
   const [selectedAssets, setSelectedAssets] = useLocalStorage<string[]>({
     key: 'assets',
@@ -67,7 +72,7 @@ export default function Home() {
     if (!cache) return;
 
     const textures = cache.paths
-      .filter((e) => selectedAssets.length === 0 ? true : selectedAssets.some((asset) => e.startsWith(`assets/${asset}`)))
+      .filter((e) => selectedAssets.length === 0 ? true : selectedAssets.some((asset) => e.startsWith(`assets/${asset}/`)))
       .filter((e) => search === '' ? true : e.toLowerCase().includes(search.toLowerCase()))
       .filter((e) => e.endsWith('.png'))
 
@@ -75,6 +80,19 @@ export default function Home() {
   }, [allAssets, selectedAssets, search]);
 
   const splittedTextures = useMemo(() => chunk(displayedTextures, 36), [displayedTextures]);
+  const [activeExtraPage, setActiveExtraPage] = useState(1);
+
+  const filteredExtraFiles = useMemo(() =>
+    extraFiles.filter((f) =>
+      (selectedAssets.length === 0 || selectedAssets.some((a) => f.startsWith(`assets/${a}`))) &&
+      (search === '' || f.toLowerCase().includes(search.toLowerCase()))
+    ),
+    [extraFiles, selectedAssets, search]
+  );
+  const splittedExtraFiles = useMemo(() => {
+    setActiveExtraPage(1);
+    return chunk(filteredExtraFiles, 36);
+  }, [filteredExtraFiles]);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { width } = useViewportSize();
@@ -115,12 +133,13 @@ export default function Home() {
         )}
       </Modal>
 
-      <MultiSelect 
+      <MultiSelect
         w="100%"
         data={allAssets}
         value={selectedAssets}
         onChange={(v) => setSelectedAssets(v)}
         label="Select Assets folders"
+        searchable
         radius={0}
       />
 
@@ -132,52 +151,101 @@ export default function Home() {
         radius={0}
       />
 
-      <Text size="xs" c="dimmed" mt={-15} ml={2}>
-        Showing {displayedTextures.length} results
-      </Text>
+      <Tabs defaultValue="all">
+        <Tabs.List>
+          <Tabs.Tab value="all">
+            Все текстуры ({displayedTextures.length})
+          </Tabs.Tab>
+          <Tabs.Tab value="extra" c="orange">
+            Лишние файлы ({filteredExtraFiles.length})
+          </Tabs.Tab>
+        </Tabs.List>
 
-      <Pagination
-        mx="auto"
-        total={splittedTextures.length}
-        value={activePage}
-        onChange={setActivePage}
-        classNames={{
-          control: 'bordered'
-        }}
-      />
+        <Tabs.Panel value="all">
+          <Stack mt="md">
+            <Pagination
+              mx="auto"
+              total={splittedTextures.length}
+              value={activePage}
+              onChange={setActivePage}
+              classNames={{ control: 'bordered' }}
+            />
 
-      <Group gap="md">
-        {splittedTextures[activePage - 1]?.map((filepath) => (
-          <Card 
-            w={`calc((100% - (${cardsPerRow - 1} * var(--mantine-spacing-md))) / ${cardsPerRow})`} 
-            ref={containerRef}
-            radius={0}
-            withBorder
-            key={filepath}
-            p="xs"
-          >
-            <Stack gap="xs">
-              <Group gap="md" wrap="nowrap" w="100%" justify="center">
-                <MenuHolder filePath={filepath} resolution="x16" openModal={(data) => handleModalOpen(data)} />
-                <MenuHolder filePath={filepath} resolution="x32" openModal={(data) => handleModalOpen(data)} />
-              </Group>
-              <Text w="100%" ta="center">
-                {filepath.split('/').pop()?.replace('.png', '')}
-              </Text>
-            </Stack>
-          </Card>
-        ))}
-      </Group>
+            <Group gap="md">
+              {splittedTextures[activePage - 1]?.map((filepath) => (
+                <Card
+                  w={`calc((100% - (${cardsPerRow - 1} * var(--mantine-spacing-md))) / ${cardsPerRow})`}
+                  ref={containerRef}
+                  radius={0}
+                  withBorder
+                  key={filepath}
+                  p="xs"
+                >
+                  <Stack gap="xs">
+                    <Group gap="md" wrap="nowrap" w="100%" justify="center">
+                      <MenuHolder filePath={filepath} resolution="x16" openModal={(data) => handleModalOpen(data)} />
+                      <MenuHolder filePath={filepath} resolution="x32" openModal={(data) => handleModalOpen(data)} />
+                    </Group>
+                    <Text w="100%" ta="center">
+                      {filepath.split('/').pop()?.replace('.png', '')}
+                    </Text>
+                  </Stack>
+                </Card>
+              ))}
+            </Group>
 
-      <Pagination
-        mx="auto"
-        total={splittedTextures.length}
-        value={activePage}
-        onChange={setActivePage}
-        classNames={{
-          control: 'bordered'
-        }}
-      />
+            <Pagination
+              mx="auto"
+              total={splittedTextures.length}
+              value={activePage}
+              onChange={setActivePage}
+              classNames={{ control: 'bordered' }}
+            />
+          </Stack>
+        </Tabs.Panel>
+
+        <Tabs.Panel value="extra">
+          <Stack mt="md">
+            <Text size="sm" c="dimmed">
+              Файлы есть в x32 (Faithful), но отсутствуют в x16 (Default)
+            </Text>
+            <Pagination
+              mx="auto"
+              total={splittedExtraFiles.length}
+              value={activeExtraPage}
+              onChange={setActiveExtraPage}
+              classNames={{ control: 'bordered' }}
+            />
+            <Group gap="md">
+              {splittedExtraFiles[activeExtraPage - 1]?.map((filepath) => (
+                <Card
+                  w={`calc((100% - (${cardsPerRow - 1} * var(--mantine-spacing-md))) / ${cardsPerRow})`}
+                  radius={0}
+                  withBorder
+                  key={filepath}
+                  p="xs"
+                >
+                  <Stack gap="xs">
+                    <Group gap="md" wrap="nowrap" w="100%" justify="center">
+                      <MenuHolder filePath={filepath} resolution="x32" openModal={(data) => handleModalOpen(data)} />
+                    </Group>
+                    <Text w="100%" ta="center" size="xs">
+                      {filepath}
+                    </Text>
+                  </Stack>
+                </Card>
+              ))}
+            </Group>
+            <Pagination
+              mx="auto"
+              total={splittedExtraFiles.length}
+              value={activeExtraPage}
+              onChange={setActiveExtraPage}
+              classNames={{ control: 'bordered' }}
+            />
+          </Stack>
+        </Tabs.Panel>
+      </Tabs>
     </Stack>
   );
 }
