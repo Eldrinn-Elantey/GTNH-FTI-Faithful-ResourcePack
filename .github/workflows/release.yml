@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Determine release metadata
         shell: bash
@@ -116,12 +118,15 @@ jobs:
 
           cat gtnh-pack-update.json
 
-      - name: Extract changelog
+      - name: Build release notes from commits
         shell: bash
         run: |
           set -euo pipefail
 
-          awk "/## Version: ${VERSION}/{flag=1;next}/## Version: /{flag=0}flag" CHANGELOG.md > RELEASE.md
+          PREV_TAG="$(git describe --tags --abbrev=0 2>/dev/null || true)"
+          RANGE="${PREV_TAG:+${PREV_TAG}..HEAD}"
+          git log --no-merges --pretty='- %s' $RANGE > RELEASE.md
+
           if [[ ! -s RELEASE.md ]]; then
             echo "Release v${VERSION}" > RELEASE.md
           fi
