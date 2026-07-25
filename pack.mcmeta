@@ -1,12 +1,12 @@
 {
   "pack": {
     "pack_format": 1,
-    "description": "§6GTNH §bFaithful x32 §6By FTI §bv0.7.0"
+    "description": "§6GTNH §bFaithful x32 §6By FTI §bv2.0.0"
   },
   "gtnh_resource_pack_updater": {
     "schema": 1,
     "pack_name": "GTNH FTI Faithful Resourcepack",
-    "pack_version": "1.0.0",
+    "pack_version": "2.0.0",
     "pack_game_version": "2.9.0",
     "source": {
       "type": "github_releases",
