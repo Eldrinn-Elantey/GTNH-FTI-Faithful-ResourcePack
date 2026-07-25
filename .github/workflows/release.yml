@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Determine release metadata
         shell: bash
@@ -91,6 +93,25 @@ jobs:
           mv pack.mcmeta.tmp pack.mcmeta
           cat pack.mcmeta
 
+      - name: Commit pack.mcmeta version bump
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="${{ github.event.pull_request.base.ref || github.ref_name }}"
+
+          if git diff --quiet -- pack.mcmeta; then
+            echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          else
+            git add pack.mcmeta
+            git commit -m "Bump pack.mcmeta to v${VERSION}"
+            git push origin "HEAD:${BRANCH}"
+            echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          fi
+
       - name: Create zip archive
         shell: bash
         run: |
@@ -116,12 +137,15 @@ jobs:
 
           cat gtnh-pack-update.json
 
-      - name: Extract changelog
+      - name: Build release notes from commits
         shell: bash
         run: |
           set -euo pipefail
 
-          awk "/## Version: ${VERSION}/{flag=1;next}/## Version: /{flag=0}flag" CHANGELOG.md > RELEASE.md
+          PREV_TAG="$(git describe --tags --abbrev=0 2>/dev/null || true)"
+          RANGE="${PREV_TAG:+${PREV_TAG}..HEAD}"
+          git log --no-merges --pretty='- %s' $RANGE > RELEASE.md
+
           if [[ ! -s RELEASE.md ]]; then
             echo "Release v${VERSION}" > RELEASE.md
           fi
@@ -131,7 +155,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ env.VERSION }}"
-          target_commitish: "${{ github.event.pull_request.merge_commit_sha || github.sha }}"
+          target_commitish: "${{ env.COMMIT_SHA }}"
           body_path: RELEASE.md
           files: |
             ${{ env.ZIP_NAME }}
