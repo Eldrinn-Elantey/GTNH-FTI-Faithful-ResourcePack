@@ -5,7 +5,7 @@ on:
     inputs:
       version:
         description: 'Version number in SemVer format (x.y.z), without v prefix'
-        required: false
+        required: true
       pack_game_version:
         description: 'Optional GTNH version list (SemVer values separated by ;)'
         required: false
@@ -31,20 +31,25 @@ jobs:
 
       - name: Determine release metadata
         shell: bash
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+          INPUT_PACK_GAME_VERSION: ${{ github.event.inputs.pack_game_version }}
+          PR_TITLE_RAW: ${{ github.event.pull_request.title }}
         run: |
           set -euo pipefail
 
           semver_regex='^[0-9]+\.[0-9]+\.[0-9]+$'
           semver_title_regex='^v?[0-9]+\.[0-9]+\.[0-9]+$'
-          semver_list_regex='^[0-9]+\.[0-9]+\.([0-9]+|X)([[:space:]]*;[[:space:]]*[0-9]+\.[0-9]+\.([0-9]+|X))*$'
+          semver_seg='([0-9]+|[Xx])'
+          semver_list_regex="^${semver_seg}\.${semver_seg}\.${semver_seg}([[:space:]]*;[[:space:]]*${semver_seg}\.${semver_seg}\.${semver_seg})*$"
 
-          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.version }}" ]]; then
-            VERSION="${{ github.event.inputs.version }}"
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "$INPUT_VERSION" ]]; then
+            VERSION="$INPUT_VERSION"
           else
-            PR_TITLE="$(echo "${{ github.event.pull_request.title }}" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+            PR_TITLE="$(echo "$PR_TITLE_RAW" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
             if [[ ! "$PR_TITLE" =~ $semver_title_regex ]]; then
-              echo "PR title '$PR_TITLE' must be version in format x.y.z or vx.y.z."
-              exit 1
+              echo "PR title '$PR_TITLE' is not a release version, skipping release."
+              exit 0
             fi
             VERSION="${PR_TITLE#v}"
           fi
@@ -55,17 +60,18 @@ jobs:
           fi
 
           PACK_GAME_VERSION="$(jq -r '.gtnh_resource_pack_updater.pack_game_version' pack.mcmeta)"
-          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.pack_game_version }}" ]]; then
-            PACK_GAME_VERSION="${{ github.event.inputs.pack_game_version }}"
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "$INPUT_PACK_GAME_VERSION" ]]; then
+            PACK_GAME_VERSION="$INPUT_PACK_GAME_VERSION"
           fi
 
           PACK_GAME_VERSION="$(echo "$PACK_GAME_VERSION" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
 
           if [[ ! "$PACK_GAME_VERSION" =~ $semver_list_regex ]]; then
-            echo "pack_game_version '$PACK_GAME_VERSION' must be SemVer list separated by ';' (example: 2.8.0;2.8.1)."
+            echo "pack_game_version '$PACK_GAME_VERSION' must be SemVer list separated by ';' (example: 2.8.0;2.8.1 or 2.9.X)."
             exit 1
           fi
 
+          echo "RELEASE=true" >> "$GITHUB_ENV"
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "PACK_GAME_VERSION=$PACK_GAME_VERSION" >> "$GITHUB_ENV"
 
@@ -73,6 +79,7 @@ jobs:
           echo "Using pack_game_version: $PACK_GAME_VERSION"
 
       - name: Sync pack.mcmeta with release version
+        if: env.RELEASE == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -94,6 +101,7 @@ jobs:
           cat pack.mcmeta
 
       - name: Commit pack.mcmeta version bump
+        if: env.RELEASE == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -113,6 +121,7 @@ jobs:
           fi
 
       - name: Create zip archive
+        if: env.RELEASE == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -123,6 +132,7 @@ jobs:
           zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
 
       - name: Generate release JSON
+        if: env.RELEASE == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -138,6 +148,7 @@ jobs:
           cat gtnh-pack-update.json
 
       - name: Build release notes from commits
+        if: env.RELEASE == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -152,9 +163,11 @@ jobs:
           cat RELEASE.md
 
       - name: Create GitHub Release
+        if: env.RELEASE == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "${{ env.VERSION }}"
+          name: "${{ env.VERSION }}"
           target_commitish: "${{ env.COMMIT_SHA }}"
           body_path: RELEASE.md
           files: |
