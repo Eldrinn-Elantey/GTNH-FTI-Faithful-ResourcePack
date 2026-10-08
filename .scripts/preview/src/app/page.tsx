@@ -61,6 +61,33 @@ export default function Home() {
     return Array.from(set).sort();
   }, [cache]);
 
+  const [selectedFolders, setSelectedFolders] = useLocalStorage<string[]>({
+    key: 'folders',
+    defaultValue: [],
+  });
+
+  // folder path relative to `assets/<mod>/`, without the file name
+  const folderOf = (filePath: string) => filePath.split('/').slice(2, -1).join('/');
+
+  const allFolders = useMemo(() => {
+    if (!cache) return [];
+
+    const set = new Set<string>();
+    [...cache.paths, ...extraFiles]
+      .filter((e) => selectedAssets.length === 0 ? true : selectedAssets.some((asset) => e.startsWith(`assets/${asset}/`)))
+      .forEach((filePath) => {
+        const parts = folderOf(filePath).split('/').filter(Boolean);
+        // every ancestor is selectable, so a parent folder matches its children
+        for (let i = 1; i <= parts.length; i++) set.add(parts.slice(0, i).join('/'));
+      });
+
+    return Array.from(set).sort();
+  }, [cache, extraFiles, selectedAssets]);
+
+  const matchesFolder = (filePath: string) => selectedFolders.length === 0
+    ? true
+    : selectedFolders.some((folder) => `${folderOf(filePath)}/`.startsWith(`${folder}/`));
+
   const [displayedTextures, setDisplayedTextures] = useState<string[]>([]);
   const [activePage, setActivePage] = useState(1);
   const [search, setSearch] = useLocalStorage<string>({
@@ -73,11 +100,13 @@ export default function Home() {
 
     const textures = cache.paths
       .filter((e) => selectedAssets.length === 0 ? true : selectedAssets.some((asset) => e.startsWith(`assets/${asset}/`)))
+      .filter(matchesFolder)
       .filter((e) => search === '' ? true : e.toLowerCase().includes(search.toLowerCase()))
       .filter((e) => e.endsWith('.png'))
 
+    setActivePage(1);
     setDisplayedTextures(textures.sort());
-  }, [allAssets, selectedAssets, search]);
+  }, [allAssets, selectedAssets, selectedFolders, search]);
 
   const splittedTextures = useMemo(() => chunk(displayedTextures, 36), [displayedTextures]);
   const [activeExtraPage, setActiveExtraPage] = useState(1);
@@ -85,9 +114,10 @@ export default function Home() {
   const filteredExtraFiles = useMemo(() =>
     extraFiles.filter((f) =>
       (selectedAssets.length === 0 || selectedAssets.some((a) => f.startsWith(`assets/${a}`))) &&
+      matchesFolder(f) &&
       (search === '' || f.toLowerCase().includes(search.toLowerCase()))
     ),
-    [extraFiles, selectedAssets, search]
+    [extraFiles, selectedAssets, selectedFolders, search]
   );
   const splittedExtraFiles = useMemo(() => {
     setActiveExtraPage(1);
@@ -140,6 +170,18 @@ export default function Home() {
         onChange={(v) => setSelectedAssets(v)}
         label="Select Assets folders"
         searchable
+        radius={0}
+      />
+
+      <MultiSelect
+        w="100%"
+        data={allFolders}
+        value={selectedFolders}
+        onChange={(v) => setSelectedFolders(v)}
+        label="Select folders"
+        placeholder={selectedFolders.length === 0 ? 'All folders' : undefined}
+        searchable
+        clearable
         radius={0}
       />
 

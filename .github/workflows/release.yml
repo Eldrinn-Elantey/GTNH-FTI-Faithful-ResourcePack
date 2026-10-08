@@ -100,6 +100,18 @@ jobs:
           mv pack.mcmeta.tmp pack.mcmeta
           cat pack.mcmeta
 
+      - name: Build release notes from changed files
+        if: env.RELEASE == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          bash .github/scripts/release-notes.sh > RELEASE.md
+
+          { head -n 1 CHANGELOG.md; printf '\n## Version: %s\n\n' "$VERSION"; cat RELEASE.md; tail -n +2 CHANGELOG.md; } > CHANGELOG.md.tmp
+          mv CHANGELOG.md.tmp CHANGELOG.md
+          cat RELEASE.md
+
       - name: Commit pack.mcmeta version bump
         if: env.RELEASE == 'true'
         shell: bash
@@ -111,11 +123,11 @@ jobs:
 
           BRANCH="${{ github.event.pull_request.base.ref || github.ref_name }}"
 
-          if git diff --quiet -- pack.mcmeta; then
+          if git diff --quiet -- pack.mcmeta CHANGELOG.md; then
             echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           else
-            git add pack.mcmeta
-            git commit -m "Bump pack.mcmeta to v${VERSION}"
+            git add pack.mcmeta CHANGELOG.md
+            git commit -m "Bump pack.mcmeta and CHANGELOG.md to v${VERSION}"
             git push origin "HEAD:${BRANCH}"
             echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           fi
@@ -146,21 +158,6 @@ jobs:
           EOF
 
           cat gtnh-pack-update.json
-
-      - name: Build release notes from commits
-        if: env.RELEASE == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          PREV_TAG="$(git describe --tags --abbrev=0 2>/dev/null || true)"
-          RANGE="${PREV_TAG:+${PREV_TAG}..HEAD}"
-          git log --no-merges --pretty='- %s' $RANGE > RELEASE.md
-
-          if [[ ! -s RELEASE.md ]]; then
-            echo "Release v${VERSION}" > RELEASE.md
-          fi
-          cat RELEASE.md
 
       - name: Create GitHub Release
         if: env.RELEASE == 'true'
