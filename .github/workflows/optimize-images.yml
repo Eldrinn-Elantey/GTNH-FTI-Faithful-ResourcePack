@@ -24,14 +24,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
-      - name: Find added PNGs
+      - name: Find changed PNGs
         id: files
         shell: bash
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          git diff --name-only -z --diff-filter=A --find-renames "$BASE_SHA...HEAD" -- '*.png' > "$RUNNER_TEMP/added-pngs"
-          if [[ -s "$RUNNER_TEMP/added-pngs" ]]; then
+          git diff --name-only -z --diff-filter=AM --find-renames "$BASE_SHA...HEAD" -- '*.png' > "$RUNNER_TEMP/changed-pngs"
+          if [[ -s "$RUNNER_TEMP/changed-pngs" ]]; then
             echo 'found=true' >> "$GITHUB_OUTPUT"
           fi
 
@@ -39,7 +39,7 @@ jobs:
         if: steps.files.outputs.found == 'true'
         run: cargo install oxipng --version '=10.2.1' --locked
 
-      - name: Optimize added PNGs
+      - name: Optimize changed PNGs
         id: optimize
         if: steps.files.outputs.found == 'true'
         shell: bash
@@ -53,7 +53,7 @@ jobs:
             if [[ "$FROM_FORK" == true ]] && ! git --literal-pathspecs diff --cached --quiet -- "$file"; then
               install -D -- "$file" "$RUNNER_TEMP/optimized-pngs/$file"
             fi
-          done < "$RUNNER_TEMP/added-pngs"
+          done < "$RUNNER_TEMP/changed-pngs"
 
           if ! git diff --cached --quiet; then
             echo 'changed=true' >> "$GITHUB_OUTPUT"
@@ -68,7 +68,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Optimize newly added PNGs'
+          git commit -m 'Optimize changed PNGs'
           branch="refs/heads/$PR_HEAD_REF"
           git push --force-with-lease="$branch:$PR_HEAD_SHA" origin "HEAD:$branch"
 
