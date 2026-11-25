@@ -1,0 +1,82 @@
+name: Optimize PNGs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+concurrency:
+  group: optimize-images-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  optimize:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+
+      - name: Find added PNGs
+        id: files
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git diff --name-only -z --diff-filter=A --find-renames "$BASE_SHA...HEAD" -- '*.png' > "$RUNNER_TEMP/added-pngs"
+          if [[ -s "$RUNNER_TEMP/added-pngs" ]]; then
+            echo 'found=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install oxipng
+        if: steps.files.outputs.found == 'true'
+        run: cargo install oxipng --version '=10.2.1' --locked
+
+      - name: Optimize added PNGs
+        id: optimize
+        if: steps.files.outputs.found == 'true'
+        shell: bash
+        env:
+          FROM_FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        run: |
+          while IFS= read -r -d '' file; do
+            [[ -f "$file" && ! -L "$file" ]] || continue
+            oxipng -o max --nx --strip none -- "$file"
+            git --literal-pathspecs add -- "$file"
+            if [[ "$FROM_FORK" == true ]] && ! git --literal-pathspecs diff --cached --quiet -- "$file"; then
+              install -D -- "$file" "$RUNNER_TEMP/optimized-pngs/$file"
+            fi
+          done < "$RUNNER_TEMP/added-pngs"
+
+          if ! git diff --cached --quiet; then
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push optimized PNGs to the PR branch
+        if: steps.optimize.outputs.changed == 'true' && github.event.pull_request.head.repo.full_name == github.repository
+        shell: bash
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Optimize newly added PNGs'
+          branch="refs/heads/$PR_HEAD_REF"
+          git push --force-with-lease="$branch:$PR_HEAD_SHA" origin "HEAD:$branch"
+
+      - name: Upload optimized PNGs for fork PRs
+        if: steps.optimize.outputs.changed == 'true' && github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/upload-artifact@v4
+        with:
+          name: optimized-pngs
+          path: ${{ runner.temp }}/optimized-pngs/
+          include-hidden-files: true
+          if-no-files-found: error
